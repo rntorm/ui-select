@@ -1300,7 +1300,7 @@
       link: function(scope, element, attrs, $select) {
         $select.lockChoiceExpression = attrs.uiLockChoice;
         attrs.$observe('placeHolder', function(placeHolder) {
-          $select.placeHolder = placeHolder !== undefined ? placeHolder : uiSelectConfig.placeHolder;
+          $select.placeholder = placeHolder !== undefined ? placeHolder : uiSelectConfig.placeHolder;
         });
 
         $select.allowClear = (angular.isDefined(attrs.allowClear)) ? (attrs.allowClear === '') ? true : (attrs.allowClear.toLowerCase() === 'true') : false;
