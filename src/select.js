@@ -90,7 +90,7 @@
   .constant('uiSelectConfig', {
     theme: 'bootstrap',
     searchEnabled: true,
-    placeholder: '', // Empty by default, like HTML tag <select>
+    placeHolder: '', // Empty by default, like HTML tag <select>
     refreshDelay: 1000, // In milliseconds
     closeOnSelect: true,
     generateId: function() {
@@ -172,7 +172,7 @@
 
     var EMPTY_SEARCH = '';
 
-    ctrl.placeholder = undefined;
+    ctrl.placeHolder = undefined;
     ctrl.search = EMPTY_SEARCH;
     ctrl.activeIndex = 0;
     ctrl.activeMatchIndex = -1;
@@ -511,10 +511,10 @@
       });
     };
 
-    ctrl.getPlaceholder = function(){
+    ctrl.getplaceHolder = function(){
       //Refactor single?
       if(ctrl.multiple && ctrl.selected.length) return;
-      return ctrl.placeholder;
+      return ctrl.placeHolder;
     };
 
     var containerSizeWatch;
@@ -1299,8 +1299,8 @@
       },
       link: function(scope, element, attrs, $select) {
         $select.lockChoiceExpression = attrs.uiLockChoice;
-        attrs.$observe('placeholder', function(placeholder) {
-          $select.placeholder = placeholder !== undefined ? placeholder : uiSelectConfig.placeholder;
+        attrs.$observe('placeHolder', function(placeHolder) {
+          $select.placeHolder = placeHolder !== undefined ? placeHolder : uiSelectConfig.placeHolder;
         });
 
         $select.allowClear = (angular.isDefined(attrs.allowClear)) ? (attrs.allowClear === '') ? true : (attrs.allowClear.toLowerCase() === 'true') : false;
